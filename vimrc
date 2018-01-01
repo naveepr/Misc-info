@@ -18,6 +18,8 @@ Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
 Bundle 'garbas/vim-snipmate'
 "Bundle 'ervandew/supertab'
+Bundle 'vim-airline/vim-airline'
+Bundle 'flazz/vim-colorschemes'
 Bundle 'Valloric/YouCompleteMe'
 
 filetype plugin indent on
