@@ -12,7 +12,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-repeat'
 Bundle 'geoffharcourt/vim-matchit'
 Bundle 'godlygeek/tabular'
-Bundle 'fholgado/minibufexpl.vim'
+"Bundle 'fholgado/minibufexpl.vim'
 Bundle 'honza/vim-snippets'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
@@ -49,7 +49,7 @@ set hlsearch
 " 1 tab == 4 spaces
 set scrolloff=5
 set wildmenu
-" set mouse=a
+"set mouse=a
 set title
 set cursorline
 set number
@@ -78,15 +78,21 @@ colorscheme solarized
 "colorscheme summerfruit256
 " let g:solarized_termcolors=256
 " let g:solarized_termtrans=1
+let g:airline#extensions#tabline#enabled = 1
+let g:Tlist_Use_SingleClick=1
 
 " Plugins
 let mapleader=","
-"let g:tabular_loaded = 1 
-let g:miniBufExplMapWindowNavVim = 1 
-let g:miniBufExplMapWindowNavArrows = 1 
-let g:miniBufExplMapCTabSwitchBufs = 1 
-let g:miniBufExplModSelTarget = 1 
+let g:tabular_loaded = 1 
+"let g:miniBufExplMapWindowNavVim = 1 
+"let g:miniBufExplMapWindowNavArrows = 1 
+"let g:miniBufExplMapCTabSwitchBufs = 1 
+"let g:miniBufExplModSelTarget = 1 
 let python_highlight_all =1
+
+:nnoremap <Leader>a :bnext<CR>
+:nnoremap <Leader>s :bprevious<CR>
+:nnoremap <C-X> :bdelete<CR>
 
 imap <C-J> <Plug>snipMateNextOrTrigger
 smap <C-J> <Plug>snipMateNextOrTrigger
@@ -101,7 +107,8 @@ let g:DoxygenToolkit_authorName="Mathias Lorente"
 let g:DoxygenToolkit_licenseTag="My own license"
 
 "Ctrlp funky
-nnoremap <Leader>fu :CtrlPFunky<Cr>
+nmap <Leader>p :CtrlPMixed<Cr>
+nnoremap <Leader>f :CtrlPFunky<Cr>
 " narrow the list down with a word under cursor
 nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
 let g:ctrlp_funky_matchtype = 'path'
@@ -112,8 +119,7 @@ let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 
 let Tlist_Ctags_Cmd = "/usr/bin/ctags"
 let Tlist_WinWidth = 50
-nmap <F5> :buffers<CR>:buffer<Space>
-nmap <F6>   :CtrlPMixed
+nmap <Leader>b :buffers<CR>:buffer<Space>
 let g:ctrlp_working_path_mode = 0
 nmap <F7>   :TlistToggle<CR>
 nmap <F8>   :NERDTreeToggle<CR>
