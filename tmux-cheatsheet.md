@@ -72,4 +72,4 @@
       bind -n M-Up select-pane -U
       bind -n M-Down select-pane -D
 
-##bind r source-file ~/.tmux.conf \; display "Reloaded ~/.tmux.conf"
+## bind r source-file ~/.tmux.conf \; display "Reloaded ~/.tmux.conf"
