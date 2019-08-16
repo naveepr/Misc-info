@@ -89,7 +89,7 @@
     :set cindent       - stricter rules for C programs    
     To stop indenting when pasting with the mouse, add this to your .vimrc:
     :set pastetoggle=<f5>  
-
+    :%s/\s\+$//e - remove trailing space at end of line
 ### reformatting
     V=  - select text, then reformat with =
     =   - will correct alignment of code
