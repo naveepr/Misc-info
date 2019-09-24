@@ -1,1 +1,16 @@
- - Selection mode cmd+alt
+ - Selection mode - cmd+alt
+ - Clear - cmd + r
+ - split pane vertically - cmd + d
+ - split pane horizontally - cmd + shift + d
+ - skip word forward - ctrl + f
+ - skip word backward - ctrl + d
+ - start of line - ctrl + a
+ - end of line - ctrl + e
+ - left window - cmd + [
+ - right window - cmd + ]
+ - delete line - ctrl + u
+ - undo delete - ctrl + y
+ - paste hisoty - cmd + shift + h
+ - close tab - cmd + w 
+ - toggle full screen - cmd + enter
+ 
