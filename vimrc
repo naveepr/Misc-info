@@ -79,6 +79,13 @@ colorscheme solarized
 " let g:solarized_termcolors=256
 " let g:solarized_termtrans=1
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+let g:airline_theme='powerlineish'
+let g:airline#extensions#syntastic#enabled = 1
+set laststatus=2
+"let g:airline#extensions#tabline#switch_buffers_and_tabs = 1
+"let g:airline#extensions#tabline#show_buffers = 1 " enable/disable displaying buffers with a single tab
+let g:airline#extensions#tabline#formatter = 'default'
 let g:Tlist_Use_SingleClick=1
 
 " Plugins
@@ -114,7 +121,7 @@ nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
 let g:ctrlp_funky_matchtype = 'path'
 let g:ctrlp_funky_syntax_highlight = 1
 
-let g:airline#extensions#tabline#enabled = 1
+" YouCompleteMe
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 
 let Tlist_Ctags_Cmd = "/usr/bin/ctags"
