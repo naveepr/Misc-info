@@ -30,7 +30,8 @@
     :set hlsearch   - search highlighting
     *               - search for word currently under cursor
     [I              - show lines with matching word under cursor
-
+    :%s/foo/bar/gc  - search and replace with confirmation
+    
 ### moving 
     l   - move right
     h   - move left
