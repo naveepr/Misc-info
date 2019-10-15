@@ -24,6 +24,7 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'kien/ctrlp.vim'
 Bundle 'tacahiroy/ctrlp-funky'
 Bundle 'vim-scripts/DoxygenToolkit.vim'
+Bundle 'Shougo/deoplete.nvim' , { 'do': ':UpdateRemotePlugins' }
 
 filetype plugin indent on
 syntax on
