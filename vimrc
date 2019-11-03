@@ -24,6 +24,7 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'kien/ctrlp.vim'
 Bundle 'tacahiroy/ctrlp-funky'
 Bundle 'vim-scripts/DoxygenToolkit.vim'
+Bundle 'nfvs/vim-perforce'
 Bundle 'Shougo/deoplete.nvim' , { 'do': ':UpdateRemotePlugins' }
 
 filetype plugin indent on
@@ -144,6 +145,12 @@ noremap <C-L>     <C-W>l
 " Treat long lines as break lines (useful when moving around in them)
 map j gj
 map k gk
+
+" Perforce related
+let g:perforce_open_on_change = 1 " (default: 0)
+let g:perforce_open_on_save = 1 "(default: 1)
+" let g:perforce_auto_source_dirs  (default: [])
+let g:perforce_prompt_on_open = 1 "(default: 1)
 
 " Only do this part when compiled with support for autocommands
 if has("autocmd")
