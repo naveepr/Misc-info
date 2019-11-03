@@ -114,3 +114,8 @@ POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%{%B%F{black}%K{yellow}%} $user_symbo
 
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan,bold,underline"
+
+# User specific aliases and functions
+DISABLE_AUTO_TITLE=true
+export CSCOPE_EDITOR=vim
+export EDITOR=vim
