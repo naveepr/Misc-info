@@ -37,7 +37,8 @@
     set -g history-limit 10000
 
     setw -g mode-keys vi
-    setw -g mode-mouse on
+    #setw -g mode-mouse on
+    setw -g mouse on
     setw -g monitor-activity on
 
 ## fix the titles
@@ -62,9 +63,10 @@
     bind A command-prompt "rename-window %%"
 
 ## Enable mouse control (clickable windows, panes, resizable panes)
-    set -g mouse-select-window on
-    set -g mouse-select-pane on
-    set -g mouse-resize-pane on
+    set -g mouse on
+    #set -g mouse-select-window on
+    #set -g mouse-select-pane on
+    #set -g mouse-resize-pane on
 
 ## switch panes using Alt-arrow without prefix
       bind -n M-Left select-pane -L
