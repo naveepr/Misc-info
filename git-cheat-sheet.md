@@ -125,7 +125,7 @@ git config --global user.email “[valid-email]” --> set an email address that
 git config --global color.ui auto --> set automatic command line coloring for Git for easy reviewing
 git config color.ui true --> use colorful git output
 git config format.pretty oneline --> show log on just one line per commit
-git config --list
+git config --list --> lists out all the config commands configured
 git config --global core.excludesfile [file] --> system wide ignore patern for all local repositories
 ```
 
