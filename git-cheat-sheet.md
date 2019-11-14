@@ -88,7 +88,7 @@
    git log --stat -M --> show all commit logs with indication of any paths that moved
 ```
 
-  - *git reset *
+  - *git reset*
 ```sh
   git reset or git reset HEAD --> the index is also changed to the stage in the previous commit
   git reset --soft --> the HEAD is only changed,
@@ -158,7 +158,6 @@ git bisect reset
 ```
 - *git revert* : reverts a commit but adds this as a new commit
 
-- git 
   - git cat-file -p HEAD
   - git ls-tree HEAD
   - git ls-files -s
