@@ -13,11 +13,13 @@
 ```sh
     git add filename
     git add *
+    git add -p --> this gives the option to decide what files need to be staged.
 ```
 
 - *git commit* : Commit the changes to the HEAD
 ```sh
    git commit -m "Add appropriate comments"
+   git commit --amend --> changes the content of the commit
 ```
 
  - *git push* : Your changes are now in the HEAD of your local working copy. Change master to whatever branch you want to push your changes to.
@@ -60,7 +62,7 @@
     git diff --> working dir vs HEAD, diff of what is changed but not staged
     git diff --cached --> staged changes vs HEAD
     git diff --staged --> diff of what is staged but not yet commited
-    git diff HEAD
+    git diff HEAD --> see the changes in both the staged and working area
     git diff <source_branch> <target_branch>
 ```
 
@@ -142,11 +144,21 @@ git config --global core.excludesfile [file] --> system wide ignore patern for a
  
  - *git show* : show any object in Git in human-readable format
  
- - git rebase: 
+ - *git rebase* : 
  ```sh
  git rebase [branch] --> apply any commits of current branch ahead of specified one
  ```
  
+ - *git bisect* :
+```sh
+git bisect start
+git bisect good
+git bisect bad
+git bisect reset
+```
+- *git revert* : reverts a commit but adds this as a new commit
+
+- git 
   - git cat-file -p HEAD
   - git ls-tree HEAD
   - git ls-files -s
