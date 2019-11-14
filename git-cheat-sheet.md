@@ -99,7 +99,11 @@
   git reset [file] --> unstage a file while retaining the changes in working directory
 ```
 
-  - *git rm* : removes the file from the staging area as well as the working dir
+- *git reflog* : track the HEAD
+
+- *git cherry-pick*: gets a particular commit back to the branch
+
+- *git rm* : removes the file from the staging area as well as the working dir
 ```sh
   git rm --cached --> working dir has a copy. Its different from git reset HEAD in the sense that the staging 
   area is removed of the file which will be reflected in the next commit in effect deleing the file.
@@ -148,7 +152,7 @@ git config --global core.excludesfile [file] --> system wide ignore patern for a
  
  - *git rebase* : 
  ```sh
- git rebase [branch] --> apply any commits of current branch ahead of specified one
+ git rebase [branch] --> apply any commits of current branch ahead of specified one. It provides a linear commit history compared to the git pull and merge strategy.
  ```
  
  - *git bisect* :
