@@ -91,9 +91,11 @@
   - *git reset*
 ```sh
   git reset or git reset HEAD --> the index is also changed to the stage in the previous commit
-  git reset --soft --> the HEAD is only changed,
-  git reset --hard --> everything including the working directory is changed.
+  git reset --soft --> the HEAD is only changed
+  git reset --soft [commitid] --> basically moves it back to the staging area
+  git reset --mixed [commitid] --> moves it back to the working area
   git reset --hard [commit] --> clear staging area, rewrite working tree from specified commit
+  git reset --hard --> everything including the working directory is changed.
   git reset [file] --> unstage a file while retaining the changes in working directory
 ```
 
