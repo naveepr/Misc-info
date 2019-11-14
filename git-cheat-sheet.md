@@ -160,9 +160,9 @@ git bisect reset
 ```
 - *git revert* : reverts a commit but adds this as a new commit
 
-  - git cat-file -p HEAD
-  - git ls-tree HEAD
-  - git ls-files -s
+- git cat-file -p HEAD
+- git ls-tree HEAD
+- git ls-files -s
 
 
 
