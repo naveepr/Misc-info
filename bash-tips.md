@@ -40,11 +40,11 @@ literally whereas in the case of double quoute it can be used for substituting w
 
 ## Arithmetic
 
-### let <arithmetic expresssion>
+### Let <arithmetic expresssion>
 > - let a= (4+5)
 > - let "a=5+4"
 
-### expr - is similar to let except instead of saving the result to a variable it instead prints the answer. 
+### Expr - is similar to let except instead of saving the result to a variable it instead prints the answer. 
 > - expr 5 + 4 
 > - expr 5 \* 4
 > - expr 5+4
