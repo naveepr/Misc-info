@@ -25,7 +25,14 @@ Plug 'flazz/vim-colorschemes'
 Plug 'kien/ctrlp.vim'
 Plug 'tacahiroy/ctrlp-funky'
 Plug 'vim-scripts/DoxygenToolkit.vim'
+Plug 'nfvs/vim-perforce'
 Plug 'Shougo/deoplete.nvim' , { 'do': ':UpdateRemotePlugins' }
+Plug 'fatih/vim-go'                            " Go support
+Plug 'zchee/deoplete-go', { 'do': 'make'}      " Go auto completion
+
+Plug 'dense-analysis/ale'
+Plug 'Shougo/neosnippet.vim'
+Plug 'Shougo/neosnippet-snippets'
 
 call plug#end()
 filetype plugin indent on
@@ -73,19 +80,29 @@ set shiftwidth=4
 set softtabstop=4
 
 set t_Co=256
-set background=light
+set background=dark
 "colorscheme solarized
 "colorscheme gruvbox
 "colorscheme PaperColor
-"colorscheme zenburn
+colorscheme jellybeans
 "colorscheme summerfruit256
-colorscheme lucius
+"colorscheme lucius
 " let g:solarized_termcolors=256
 " let g:solarized_termtrans=1
 
 
-" Plugins
-"Airline
+"----------------------------------------------
+" Plugin: 'dense-analysis/ale' 
+"----------------------------------------------
+"ale - Error and warning signs
+let g:ale_sign_error = '⤫'
+let g:ale_sign_warning = '⚠'
+" Enable integration with airline.
+let g:airline#extensions#ale#enabled = 1
+
+"----------------------------------------------
+" Plugin: 'vim-airline/vim-airline' 
+"----------------------------------------------
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline_theme='powerlineish'
@@ -96,7 +113,9 @@ set laststatus=2
 let g:airline#extensions#tabline#formatter = 'default'
 let g:Tlist_Use_SingleClick=1
 
-"minibuff
+"----------------------------------------------
+" Plugin: 'fholgado/minibufexpl.vim'
+"----------------------------------------------
 let mapleader=","
 let g:tabular_loaded = 1
 "let g:miniBufExplMapWindowNavVim = 1
@@ -109,10 +128,38 @@ let python_highlight_all =1
 :nnoremap <Leader>s :bprevious<CR>
 :nnoremap <C-X> :bdelete<CR>
 
+"----------------------------------------------
+" Plugin: 'garbas/vim-snipmate'
+"----------------------------------------------
 imap <C-J> <Plug>snipMateNextOrTrigger
 smap <C-J> <Plug>snipMateNextOrTrigger
 
-"Doxygen
+"----------------------------------------------
+" Plugin: 'Shougo/neosnippet.vim'
+"----------------------------------------------
+" Plugin key-mappings.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+" SuperTab like snippets behavior.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+"imap <expr><TAB>
+" \ pumvisible() ? "\<C-n>" :
+" \ neosnippet#expandable_or_jumpable() ?
+" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+" For conceal markers.
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif
+
+"----------------------------------------------
+" Plugin: 'vim-scripts/DoxygenToolkit.vim'
+"----------------------------------------------
 let g:DoxygenToolkit_briefTag_pre="@Synopsis  "
 let g:DoxygenToolkit_paramTag_pre="@Param "
 let g:DoxygenToolkit_returnTag="@Returns   "
@@ -121,7 +168,10 @@ let g:DoxygenToolkit_blockFooter="----------------------------------------------
 let g:DoxygenToolkit_authorName="Mathias Lorente"
 let g:DoxygenToolkit_licenseTag="My own license"
 
-"Ctrlp funky
+"----------------------------------------------
+" Plugin: 'kien/ctrlp.vim'
+" Plugin: 'tacahiroy/ctrlp-funky' 
+"----------------------------------------------
 nmap <Leader>p :CtrlPMixed<Cr>
 nnoremap <Leader>f :CtrlPFunky<Cr>
 " narrow the list down with a word under cursor
@@ -129,10 +179,14 @@ nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
 let g:ctrlp_funky_matchtype = 'path'
 let g:ctrlp_funky_syntax_highlight = 1
 
-" YouCompleteMe
+"----------------------------------------------
+" Plugin: 'Valloric/YouCompleteMe'
+"----------------------------------------------
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 
-" deoplete
+"----------------------------------------------
+" Plugin: 'Shougo/deoplete.nvim'
+"----------------------------------------------
 let g:deoplete#enable_at_startup = 1
 let Tlist_Ctags_Cmd = "/usr/bin/ctags"
 let Tlist_WinWidth = 50
@@ -153,11 +207,121 @@ noremap <C-L>     <C-W>l
 map j gj
 map k gk
 
-" Perforce related
+"----------------------------------------------
+" Plugin: 'nfvs/vim-perforce'
+"----------------------------------------------
 let g:perforce_open_on_change = 1 " (default: 0)
 let g:perforce_open_on_save = 1 "(default: 1)
 " let g:perforce_auto_source_dirs  (default: [])
 let g:perforce_prompt_on_open = 1 "(default: 1)
+
+"----------------------------------------------
+" Plugin: zchee/deoplete-go
+"----------------------------------------------
+" Enable completing of go pointers
+let g:deoplete#sources#go#pointer = 1
+
+" Enable autocomplete of unimported packages
+let g:deoplete#sources#go#unimported_packages = 0
+
+"----------------------------------------------
+" Language: Golang
+"----------------------------------------------
+au FileType go set noexpandtab
+au FileType go set shiftwidth=4
+au FileType go set softtabstop=4
+au FileType go set tabstop=4
+
+" Mappings
+au FileType go nmap <F5> :GoMetaLinter<cr>
+au FileType go nmap <F6> :GoCoverageToggle -short<cr>
+au FileType go nmap <F11> :GoTest -short<cr>
+au FileType go nmap <F12> <Plug>(go-def)
+au Filetype go nmap <leader>ga <Plug>(go-alternate-edit)
+au Filetype go nmap <leader>gah <Plug>(go-alternate-split)
+au Filetype go nmap <leader>gav <Plug>(go-alternate-vertical)
+au FileType go nmap <leader>gt :GoDeclsDir<cr>
+au FileType go nmap <leader>gc <Plug>(go-coverage-toggle)
+au FileType go nmap <leader>gd <Plug>(go-def)
+au FileType go nmap <leader>gdv <Plug>(go-def-vertical)
+au FileType go nmap <leader>gdh <Plug>(go-def-split)
+au FileType go nmap <leader>gD <Plug>(go-doc)
+au FileType go nmap <leader>gDv <Plug>(go-doc-vertical)
+
+" Run goimports when running gofmt
+let g:go_fmt_command = "goimports"
+
+" Set neosnippet as snippet engine
+let g:go_snippet_engine = "neosnippet"
+
+" Enable syntax highlighting per default
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_extra_types = 1
+
+" Show the progress when running :GoCoverage
+let g:go_echo_command_info = 1
+
+" Show type information
+let g:go_auto_type_info = 1
+
+" Highlight variable uses
+let g:go_auto_sameids = 1
+
+" Fix for location list when vim-go is used together with Syntastic
+let g:go_list_type = "quickfix"
+
+" Add the failing test name to the output of :GoTest
+let g:go_test_show_name = 1
+
+let g:go_gocode_propose_source=1
+
+" gometalinter configuration
+let g:go_metalinter_command = ""
+let g:go_metalinter_deadline = "5s"
+let g:go_metalinter_enabled = [
+    \ 'deadcode',
+    \ 'gas',
+    \ 'goconst',
+    \ 'gocyclo',
+    \ 'golint',
+    \ 'gosimple',
+    \ 'ineffassign',
+    \ 'vet',
+    \ 'vetshadow'
+\]
+
+" Set whether the JSON tags should be snakecase or camelcase.
+let g:go_addtags_transform = "snakecase"
+
+" neomake configuration for Go.
+let g:neomake_go_enabled_makers = [ 'go', 'gometalinter' ]
+let g:neomake_go_gometalinter_maker = {
+  \ 'args': [
+  \   '--tests',
+  \   '--enable-gc',
+  \   '--concurrency=3',
+  \   '--fast',
+  \   '-D', 'aligncheck',
+  \   '-D', 'dupl',
+  \   '-D', 'gocyclo',
+  \   '-D', 'gotype',
+  \   '-E', 'misspell',
+  \   '-E', 'unused',
+  \   '%:p:h',
+  \ ],
+  \ 'append_file': 0,
+  \ 'errorformat':
+  \   '%E%f:%l:%c:%trror: %m,' .
+  \   '%W%f:%l:%c:%tarning: %m,' .
+  \   '%E%f:%l::%trror: %m,' .
+  \   '%W%f:%l::%tarning: %m'
+  \ }
 
 " Only do this part when compiled with support for autocommands
 if has("autocmd")
