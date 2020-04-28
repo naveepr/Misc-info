@@ -25,17 +25,21 @@ Plug 'kien/ctrlp.vim'
 Plug 'tacahiroy/ctrlp-funky'
 Plug 'vim-scripts/DoxygenToolkit.vim'
 Plug 'nfvs/vim-perforce'
-Plug 'dense-analysis/ale'
-Plug 'Shougo/neosnippet.vim'
-Plug 'Shougo/neosnippet-snippets'
+"Plug 'Shougo/deoplete.nvim' , { 'do': ':UpdateRemotePlugins' }
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' } " Go support
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
-
-"Plug 'Valloric/YouCompleteMe'
-"Plug 'Shougo/deoplete.nvim' , { 'do': ':UpdateRemotePlugins' }
 "Plug 'zchee/deoplete-go', { 'do': 'make'}      " Go auto completion
 "Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
 
+Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+Plug 'Vimjas/vim-python-pep8-indent'
+Plug 'sbdchd/neoformat'
+Plug 'tmhedberg/SimpylFold'
+Plug 'preservim/nerdcommenter'
+
+Plug 'dense-analysis/ale'
+Plug 'Shougo/neosnippet.vim'
+Plug 'Shougo/neosnippet-snippets'
 
 call plug#end()
 filetype plugin indent on
@@ -103,6 +107,37 @@ let g:ale_sign_warning = '⚠'
 " Enable integration with airline.
 let g:airline#extensions#ale#enabled = 1
 
+let g:ale_linters = {
+      \   'python': ['flake8', 'pylint'],
+      \   'ruby': ['standardrb', 'rubocop'],
+      \   'javascript': ['eslint'],
+      \}
+
+let g:ale_fixers = {
+      \    'python': ['yapf'],
+      \}
+au FileType python nmap <F6> :ALEFix<CR>
+let g:ale_fix_on_save = 1
+
+function! LinterStatus() abort
+  let l:counts = ale#statusline#Count(bufnr(''))
+
+  let l:all_errors = l:counts.error + l:counts.style_error
+  let l:all_non_errors = l:counts.total - l:all_errors
+
+  return l:counts.total == 0 ? '✨ all good ✨' : printf(
+        \   '😞 %dW %dE',
+        \   all_non_errors,
+        \   all_errors
+        \)
+endfunction
+
+set statusline=
+set statusline+=%m
+set statusline+=\ %f
+set statusline+=%=
+set statusline+=\ %{LinterStatus()}
+
 "----------------------------------------------
 " Plugin: 'vim-airline/vim-airline' 
 "----------------------------------------------
@@ -161,6 +196,13 @@ if has('conceal')
 endif
 
 "----------------------------------------------
+" Plugin: 'tmhedberg/SimpylFold'
+"----------------------------------------------
+" zc to close fold and zo to open
+"
+let g:SimpylFold_docstring_preview=1
+
+"----------------------------------------------
 " Plugin: 'vim-scripts/DoxygenToolkit.vim'
 "----------------------------------------------
 let g:DoxygenToolkit_briefTag_pre="@Synopsis  "
@@ -194,18 +236,6 @@ let g:ctrlp_funky_syntax_highlight = 1
     " Enable deoplete on startup
 "    let g:deoplete#enable_at_startup = 1
 "endif
-
-"----------------------------------------------
-" Plugin: zchee/deoplete-go
-"----------------------------------------------
-" Enable completing of go pointers
-"let g:deoplete#sources#go#pointer = 1
-
-" Enable autocomplete of unimported packages
-"let g:python3_host_prog = '/usr/local/bin/python3'
-"let g:python3_host_skip_check = 1
-"let g:deoplete#sources#go#gocode_binary = $GOPATH.'bin/gocode'
-"let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
 
 
 let Tlist_Ctags_Cmd = "/usr/bin/ctags"
@@ -302,6 +332,22 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
+"----------------------------------------------
+" Plugin: zchee/deoplete-go
+"----------------------------------------------
+" Enable completing of go pointers
+"let g:deoplete#sources#go#pointer = 1
+
+" Enable autocomplete of unimported packages
+"let g:python3_host_prog = '/usr/local/bin/python3'
+"let g:python3_host_skip_check = 1
+"let g:deoplete#sources#go#gocode_binary = $GOPATH.'bin/gocode'
+"let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
+
+"----------------------------------------------
+" Language: Python 
+"----------------------------------------------
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 "----------------------------------------------
 " Language: Golang
