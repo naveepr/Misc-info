@@ -87,10 +87,10 @@ set shiftwidth=4
 set softtabstop=4
 
 set t_Co=256
-set background=light
+"set background=light
 "colorscheme solarized
-"colorscheme gruvbox
-colorscheme PaperColor
+colorscheme gruvbox
+"colorscheme PaperColor
 "colorscheme jellybeans
 "colorscheme summerfruit256
 "colorscheme lucius
@@ -339,7 +339,7 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 "let g:deoplete#sources#go#pointer = 1
 
 " Enable autocomplete of unimported packages
-"let g:python3_host_prog = '/usr/local/bin/python3'
+let g:python3_host_prog = '/usr/local/bin/python3'
 "let g:python3_host_skip_check = 1
 "let g:deoplete#sources#go#gocode_binary = $GOPATH.'bin/gocode'
 "let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
@@ -347,7 +347,7 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 "----------------------------------------------
 " Language: Python 
 "----------------------------------------------
-au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+"au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 "----------------------------------------------
 " Language: Golang
