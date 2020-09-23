@@ -41,6 +41,14 @@ Plug 'dense-analysis/ale'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 
+" Markdown plugin
+Plug 'iamcco/markdown-preview.nvim'
+
+" PlantUML
+Plug 'aklt/plantuml-syntax'
+Plug 'tyru/open-browser.vim'
+Plug 'weirongxu/plantuml-previewer.vim'
+
 call plug#end()
 filetype plugin indent on
 syntax on
@@ -81,7 +89,7 @@ set history=50      " keep 50 lines of command line history
 " Be smart when using tabs ;)
 set smarttab
 " Use spaces instead of tabs
-" set tabstop=4
+set tabstop=4
 set expandtab
 set shiftwidth=4
 set softtabstop=4
