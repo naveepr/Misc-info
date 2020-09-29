@@ -36,6 +36,7 @@ Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'sbdchd/neoformat'
 Plug 'tmhedberg/SimpylFold'
 Plug 'preservim/nerdcommenter'
+Plug 'sebdah/vim-delve'
 
 Plug 'dense-analysis/ale'
 Plug 'Shougo/neosnippet.vim'
@@ -369,7 +370,6 @@ au FileType go set tabstop=4
 au FileType go nmap <F5> :GoMetaLinter<cr>
 au FileType go nmap <F6> :GoCoverageToggle -short<cr>
 au FileType go nmap <F11> :GoTest -short<cr>
-au FileType go nmap <F12> <Plug>(go-def)
 au FileType go nmap <leader>r <plug>(go-run)
 au FileType go nmap <leader>b <plug>(go-build)
 au Filetype go nmap <leader>ga <Plug>(go-alternate-edit)
