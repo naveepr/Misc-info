@@ -382,6 +382,9 @@ au FileType go nmap <leader>gdv <Plug>(go-def-vertical)
 au FileType go nmap <leader>gdh <Plug>(go-def-split)
 au FileType go nmap <leader>gD <Plug>(go-doc)
 au FileType go nmap <leader>gDv <Plug>(go-doc-vertical)
+au FileType go nmap <C-]> <Plug>(go-def)
+au FileType go nmap <C-t> <Plug>(go-def-pop)
+
 
 " disable vim-go :GoDef short cut (gd)
 " this is handled by LanguageClient [LC]
