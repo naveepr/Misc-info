@@ -75,6 +75,7 @@ plugins=(git
         )
 
 source $ZSH/oh-my-zsh.sh
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # User configuration
 
@@ -118,4 +119,5 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan,bold,underline"
 # User specific aliases and functions
 DISABLE_AUTO_TITLE=true
 export CSCOPE_EDITOR=vim
-export EDITOR=vim
+export EDITOR=~/nvim-osx64/bin/nvim
+export VISUAL=~/nvim-osx64/bin/nvim
