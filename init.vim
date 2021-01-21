@@ -94,15 +94,26 @@ set tabstop=4
 set expandtab
 set shiftwidth=4
 set softtabstop=4
-
+set list
+set listchars=tab:>-
+  
 set t_Co=256
-"set background=light
+set background=dark
+if (has("termguicolors"))
+    set termguicolors
+endif
+" If you would like some of the code to be bolded
+let g:enable_bold_font = 1
+" If you want comments to be in italic
+let g:enable_italic_font = 1
+" To use transparent background
+let g:hybrid_transparent_background = 1
 "colorscheme solarized
-colorscheme gruvbox
+"colorscheme gruvbox
 "colorscheme PaperColor
 "colorscheme jellybeans
 "colorscheme summerfruit256
-"colorscheme lucius
+colorscheme hybrid_reverse
 " let g:solarized_termcolors=256
 " let g:solarized_termtrans=1
 
