@@ -96,6 +96,7 @@ set shiftwidth=4
 set softtabstop=4
 set list
 set listchars=tab:>-
+set tw=78
   
 set t_Co=256
 set background=dark
