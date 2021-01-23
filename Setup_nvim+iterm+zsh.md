@@ -25,9 +25,14 @@ sudo apt install zsh
  ```
  
  - Copy the ~/.zshrc from [.zshrc](https://github.com/naveepr/dotfiles/blob/main/.zshrc). 
- Also more documentation on the inside content can be found in [zshrc content](https://callstack.com/blog/supercharge-your-terminal-with-zsh/)
+ Also more documentation on the inside content can be found in [Supercharge your Terminal with Zsh
+](https://callstack.com/blog/supercharge-your-terminal-with-zsh/)
  
- - Install the plugins needed in zshrc using oh_my_zsh. 
+ - Install the plugins needed in zshrc using oh_my_zsh
+ ```sh
+ git clone https://github.com/zdharma/fast-syntax-highlighting.git \
+  ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting
+ ```
  
  - Install vim-plugin manager for installing neovim plugins
  ```sh
