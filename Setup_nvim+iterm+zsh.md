@@ -34,7 +34,8 @@ sudo apt install zsh
   ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting
  ```
  
- - Install vim-plugin manager for installing neovim plugins
+ - Install vim-plugin manager for installing neovim plugins. [neovim install](https://www.linode.com/docs/guides/how-to-install-neovim-and-plugins-with-vim-plug/)
+
  ```sh
   curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
  ```
