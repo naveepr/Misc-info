@@ -40,5 +40,10 @@ sudo apt install zsh
  ```
  
  - Run plugInstall inside init.vim to install the plugins. The dependencies or errors needed to be resolved by installing them.
+ ```sh
+ sudo apt install yarn
+ sudo apt install npm
+ sudo apt install node
+ ```
  
  
