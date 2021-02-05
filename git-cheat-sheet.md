@@ -19,7 +19,7 @@
 - *git commit* : Commit the changes to the HEAD
 ```sh
    git commit -m "Add appropriate comments"
-   git commit --amend --> changes the content of the commit
+   git commit --amend --> changes the content of the previous commit
 ```
 
  - *git push* : Your changes are now in the HEAD of your local working copy. Change master to whatever branch you want to push your changes to.
@@ -60,10 +60,14 @@
  - *git diff*
 ```sh
     git diff --> working dir vs HEAD, diff of what is changed but not staged
+    git diff HEAD --> see the changes in both the staged and working area
+
     git diff --cached --> staged changes vs HEAD
     git diff --staged --> diff of what is staged but not yet commited
-    git diff HEAD --> see the changes in both the staged and working area
+    
+    git diff branch1..other-feature-brannch --> diff between HEAD of both branches
     git diff <source_branch> <target_branch>
+    git diff branch1...branch2 ---> diff from a shared common ancestor
 ```
 
  - *git tag*
@@ -115,10 +119,13 @@
 - *git stash* : add the working directory as well as the index to the stack and returns a clean directory. Save modified and staged changes
 ```sh
    git stash list --> list stack-order of stashed file changes
-   git stash apply
+   git stash apply. --> this keeps in the stack by applying the changes back to the working directory
    git stash apply stash@{1}
+   git stash list stash@{1}
+   git stash -u --> also add the untracked files
+   git stash -a --> also add ignored files
    git stash drop --> discard the changes from top of stash stack
-   git stash pop --> write working from top of stash stack
+   git stash pop --> write working from top of stash stack, this removes them from stash
 ```
 
 - *git checkout* : switch to another branch and check it out into your working directory
