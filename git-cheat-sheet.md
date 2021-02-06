@@ -20,6 +20,7 @@
 ```sh
    git commit -m "Add appropriate comments"
    git commit --amend --> changes the content of the previous commit
+   git commit --amend --no-edit --> commit with old message itself just adding new files to the stage that was missed before
 ```
 
  - *git push* : Your changes are now in the HEAD of your local working copy. Change master to whatever branch you want to push your changes to.
@@ -49,8 +50,13 @@
 ```
 
  - *git pull* : fetch and merge any commits from the tracking remote branch
+ git pull remote --> pull the changes from the current remote to the current branch
+ git pull --rebase <remote> --> use rebase merge strategy
  
  - *git merge* : Merge changes from another branch to the active branch
+ git checkout master
+ git merge origin/master
+ 
 ```sh
    git diff is helpful
    git merge [alias]/[branch] --> merge a remote branch into your current branch to bring it up to date
@@ -72,9 +78,12 @@
 
  - *git tag*
 ```sh
+   git tag --> listing tags
+   git tag v1.4-lw ---> lightweight tags
    git tag -a v1.0 --> tag the current commit
    git tag -a v0.9 558151a --> tag a different commit 
    git log --oneline --decorate --graph
+   git push origin v1.4 --> push tag
    git fetch origin --tags --> download tags ,by default the tags are not included
    git fetch <remote> tag <tag-name> --> give a needed tag
 ```
@@ -87,15 +96,22 @@
    git log --author=bob --> see commits by a particular author
    git log --pretty=oneline --> to see a very compressed log where each commit is one line
    git log --name-status --> to see only files that have changed
-   git log branchB..branchA --> show the commits on branchA that are not on branchB
+   git log branchB..branchA --> show the commits on branchA that are not on branchB, this can also be a commit id
    git log --follow [file] --> show the commits that changed file, even across renames
    git log --stat -M --> show all commit logs with indication of any paths that moved
+   git log -p --> get more detailed information
 ```
 
-  - *git reset*
+- *git blame*
 ```sh
-  git reset or git reset HEAD --> the index is also changed to the stage in the previous commit
-  git reset --soft --> the HEAD is only changed
+git blame filename --> get details on a particular file
+
+```
+  - *git reset*
+  This is best for undoing local changes for shared repository better to use git reverst since it does not remove the commit.
+```sh
+  git reset or git reset HEAD or git reset --mixed HEAD --> the index is also changed to the stage in the previous commit
+  git reset --soft --> the HEAD is only changed from commit history
   git reset --soft [commitid] --> basically moves it back to the staging area
   git reset --mixed [commitid] --> moves it back to the working area
   git reset --hard [commit] --> clear staging area, rewrite working tree from specified commit
@@ -142,12 +158,15 @@ git config color.ui true --> use colorful git output
 git config format.pretty oneline --> show log on just one line per commit
 git config --list --> lists out all the config commands configured
 git config --global core.excludesfile [file] --> system wide ignore patern for all local repositories
+git config --global branch.autosetuprebase always
 ```
 
 - *git fetch*  : get the latest changes from the alias
 ```sh
-  git fetch --all 
+  git fetch --all --> A power move which fetches all registered remotes and their branches:
   git fetch alias --> fetch down all the branches from that Git remote 
+  git fetch <remote> <branch> 
+  git fetch --dry-run
 ```
 
  - *git status* : show modified files in working directory, staged for your next commit
@@ -170,10 +189,15 @@ git bisect bad
 git bisect reset
 ```
 - *git revert* : reverts a commit but adds this as a new commit
+git revert HEAD --> reverts the last commit by reverting it as a new commit
 
 - git cat-file -p HEAD
 - git ls-tree HEAD
-- git ls-files -s
+- git ls-files -s --> list files in staging with additional metadata
+
+- *git clean*
+git clean -f ---> hard delete the untracked files
+git clean -n ---> show the untracked files going to be removed
 
 
 
