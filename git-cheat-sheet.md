@@ -27,6 +27,7 @@
  ```sh
   git push origin master
   git push [alias] [branch]
+  git push -u origin branch --> this needs to be done first time when pushing the branch to remote
  ```
  
   - *git branch* : list the branch you are currently in
@@ -146,7 +147,10 @@ git blame filename --> get details on a particular file
 
 - *git checkout* : switch to another branch and check it out into your working directory
 ```sh
+git checkout -b branch --> create a new branch and checkout based on current branch
+git checkout -b branch master --> checkout from master
 git checkout -- <filename> --> latest file is updated from the HEAD
+
 ```
 
 - *git config*
@@ -179,6 +183,7 @@ git config --global branch.autosetuprebase always
  - *git rebase* : 
  ```sh
  git rebase [branch] --> apply any commits of current branch ahead of specified one. It provides a linear commit history compared to the git pull and merge strategy.
+  git rebase --onto master server client --> take changes on client not on server and rebase to master
  ```
  
  - *git bisect* :
