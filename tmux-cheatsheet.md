@@ -8,20 +8,20 @@
       C+a &  - kill window
 
 ## remap prefix from 'C-b' to 'C-a'
-    unbind C-b
+    #unbind C-b
     unbind %
     unbind s
-    set-option -g prefix C-a
+    set-option -g prefix C-b
 
 ## Prefix bindings
-    bind-key C-a send-prefix
+    bind-key C-b send-prefix
 
 ## Show windows
     bind-key '"' choose-window
 
 ## Show sessions
     bind-key "'" choose-session
-    bind-key C-a last-window
+    bind-key "/" last-window
 
 ## reload config file (change file location to your the tmux.conf you want to use)
     bind R source-file ~/.tmux.conf
@@ -52,15 +52,15 @@
     set-window-option -g automatic-rename off
 
 ## Highlighting the active window in status bar
-    setw -g window-status-current-bg red
+    setw -g window-status-current-style bg=red
 
 ## Clock
     setw -g clock-mode-colour blue
     setw -g clock-mode-style 24
 
 ## title A
-    unbind A
-    bind A command-prompt "rename-window %%"
+    unbind B
+    bind B command-prompt "rename-window %%"
 
 ## Enable mouse control (clickable windows, panes, resizable panes)
     set -g mouse on
