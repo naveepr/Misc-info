@@ -193,6 +193,11 @@
     <CTRL-g>s - same as <CTRL-s>
     <CTRL-g>S - same as <CTRL-s><CTRL-s>
     
+ ### vim indent
+    <operator>ii	This indentation level
+    <operator>ai	This indentation level and the line above (think if statements in Python)
+    <operator>aI	This indentation level, the line above, and the line after (think if statements in C/C++/Java/etc)
+    
 ## References
  [Vim Reference](https://www.cs.oberlin.edu/~kuperman/help/vim/home.html) 
  
