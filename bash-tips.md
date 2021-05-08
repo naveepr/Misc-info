@@ -247,4 +247,15 @@ ls () {
 - ${#var} length of var
 - ${!x} indirection 
 
+### bash debug
+- bash -n for syntax error
+- bash -x for echo out commands, set -x , set +x
+- set -u check for unset variable
+
+### Eval 
+evaluate a string and then run it as a command
+
+### getopt 
+process options in the command
+
 
