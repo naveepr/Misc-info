@@ -211,3 +211,40 @@ ls () {
 }
 ```
 
+### Pipe and redirection 
+1. 2> means stderr to file
+2. &> both stderr and stdout 
+3. 2>&1 stderr to stdout
+4. command |& command2 stdout and stderr of command to stdout
+5. heredoc << 
+6. exec N> myfile, exec N< myfile, exec N<> myfile, exec N<&- myfile, exec N>&- myfile
+7. lsof -p $$
+8. cat 0<&19
+9. if test -f file or if [[ -f file ]]
+
+### Pattern 
+- [nN][oO] 
+- (()) or let  numeric comparison
+
+### Sed
+- sed 's/old/new/' myfile --> only first occurence
+- sed 's/old/new/G' newfile ---> all occurence
+- -e can be used for multiple expression
+- -n only echo what you want
+- sed '1,5p'
+- -f to provide the sed script that needs to run
+
+### awk 
+- FS is the field separator usually space
+- $0 is the entire line
+- awk pattern {action} 
+
+### positional arguments bash {}
+- $0 is the path to the program
+- ${var <OPR> value}
+- ${var := val}
+- ${var:offset} for string 
+- ${#var} length of var
+- ${!x} indirection 
+
+
