@@ -34,10 +34,16 @@ sudo apt install zsh
   ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting
  ```
  
+ - Install tmux plugin manager [tmux plugin manager](https://github.com/tmux-plugins/tpm)
+ ```sh
+ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+ ```
+ Copy the tmux.conf and do `Prefix`+I.
+ 
  - Install vim-plugin manager for installing neovim plugins. [neovim install](https://www.linode.com/docs/guides/how-to-install-neovim-and-plugins-with-vim-plug/)
 
  ```sh
-  curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
  ```
  
  - Run plugInstall inside init.vim to install the plugins. The dependencies or errors needed to be resolved by installing them.
