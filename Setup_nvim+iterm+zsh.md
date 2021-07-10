@@ -19,7 +19,11 @@ sudo apt install zsh
  
  - The above step will create a new .zshrc as well as create ~/.oh-my-zsh. 
  
- - Install powelevel9K [powerlevel9k](https://medium.com/@alex285/get-powerlevel9k-the-most-cool-linux-shell-ever-1c38516b0caa)
+ - Install powelevel9K [powerlevel9k](https://medium.com/@alex285/get-powerlevel9k-the-most-cool-linux-shell-ever-1c38516b0caa) or Install powerlevel10k [powerlevel10k](https://gist.github.com/kevin-smets/8568070). 
+ ```sh
+ git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
+ p10k configure
+ ```
  ```sh
  git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
  ```
