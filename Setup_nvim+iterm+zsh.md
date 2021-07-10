@@ -23,6 +23,7 @@ sudo apt install zsh
  ```sh
  git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
  ```
+ - Install a powerline font in iterm2 [powerline fonts](https://medium.com/@Clovis_app/configuration-of-a-beautiful-efficient-terminal-and-prompt-on-osx-in-7-minutes-827c29391961)
  
  - Copy the ~/.zshrc from [.zshrc](https://github.com/naveepr/dotfiles/blob/main/.zshrc). 
  Also more documentation on the inside content can be found in [Supercharge your Terminal with Zsh
