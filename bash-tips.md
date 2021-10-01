@@ -7,6 +7,7 @@
 >- $1-$9 - The first 9 arguments to the Bash script. (As mentioned above.) 
 >- $# - How many arguments were passed to the Bash script.
 >- $@ - All the arguments supplied to the Bash script.
+>- $_ - last argument of the previous command
 >- $? - The exit status of the most recently run process.
 >- $$ - The process ID of the current script.
 >- $USER - The username of the user running the script.
@@ -257,5 +258,12 @@ evaluate a string and then run it as a command
 
 ### getopt 
 process options in the command
+
+### Bash command line
+- touch foo {,1,2} will expand to touch foo foo1 foo2
+- touch {foo,bar}/{a..z} expand to touch foo/a foo/b...bar/a bar/b
+- !# shebang is used for the programs to know how to execute the script from bash.
+- tldr install for as alternative to man
+- !! last executed command 
 
 
