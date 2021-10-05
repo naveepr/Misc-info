@@ -234,11 +234,16 @@ ls () {
 - -n only echo what you want
 - sed '1,5p'
 - -f to provide the sed script that needs to run
+- in regex (ab) can be used to match only ab instead of [ab]
+- regex has a capture group when used like (), this can be used in the sed substituiton by referring them as \1 or \2 in the replacement.
 
 ### awk 
 - FS is the field separator usually space
 - $0 is the entire line
 - awk pattern {action} 
+- print $0 prints whole line
+- awk '$1 == 1 && $2 ~ /^c.*$/ print $0'
+
 
 ### positional arguments bash {}
 - $0 is the path to the program
@@ -265,5 +270,11 @@ process options in the command
 - !# shebang is used for the programs to know how to execute the script from bash.
 - tldr install for as alternative to man
 - !! last executed command 
+- sort command sorts in ascending order, sort or sort -nk1,1
+- uniq prints the unique value maybe with a count using uniq -c
+- paste -sd --> paste many lines to a single line with delimiter,
+- bc -l - berkeley calculator to read arithmetic , echo "1+2" | bc -l
+- xargs converts the line output as args to function.
+        
 
 
