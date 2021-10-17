@@ -26,6 +26,8 @@ literally whereas in the case of double quoute it can be used for substituting w
 > - variable=$( command ) - Save the output of a command into a variable
 > - myvar=$( ls /etc | wc -l )
 > - echo There are $myvar entries in the directory /etc
+> - if you do < ( CMD ) it keeps a temporary file that saves the output of the command that can be used if a file is needed as input instead of STDIN.
+> - diff <(ls /etc) < (ls /etc1)
 
 ### Exporting variables
 > export var1 - Make the variable var1 available to child processes.
