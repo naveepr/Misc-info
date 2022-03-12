@@ -50,6 +50,11 @@ sudo apt install zsh
  
  Install plugin by doing `Prefix`+I.
  
+ - Clone [nvim](https://github.com/naveepr/nvim) repository
+ ```
+ git clone https://github.com/naveepr/nvim
+ ```
+ 
  - Install vim-plugin manager for installing neovim plugins. [neovim install](https://www.linode.com/docs/guides/how-to-install-neovim-and-plugins-with-vim-plug/)
 
  ```sh
