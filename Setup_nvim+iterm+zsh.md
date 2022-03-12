@@ -18,7 +18,11 @@ sudo apt install zsh
  ```
  
  - The above step will create a new .zshrc as well as create ~/.oh-my-zsh. 
- 
+
+- Copy the ~/.zshrc from [.zshrc](https://github.com/naveepr/dotfiles/blob/main/.zshrc). 
+ Also more documentation on the inside content can be found in [Supercharge your Terminal with Zsh
+](https://callstack.com/blog/supercharge-your-terminal-with-zsh/)
+
  - Install powelevel9K [powerlevel9k](https://medium.com/@alex285/get-powerlevel9k-the-most-cool-linux-shell-ever-1c38516b0caa) or Install powerlevel10k [powerlevel10k](https://gist.github.com/kevin-smets/8568070). 
  ```sh
  git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
@@ -28,10 +32,6 @@ sudo apt install zsh
  git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
  ```
  - Install a powerline font in iterm2 [powerline fonts](https://medium.com/@Clovis_app/configuration-of-a-beautiful-efficient-terminal-and-prompt-on-osx-in-7-minutes-827c29391961)
- 
- - Copy the ~/.zshrc from [.zshrc](https://github.com/naveepr/dotfiles/blob/main/.zshrc). 
- Also more documentation on the inside content can be found in [Supercharge your Terminal with Zsh
-](https://callstack.com/blog/supercharge-your-terminal-with-zsh/)
  
  - Install the plugins needed in zshrc using oh_my_zsh
  ```sh
