@@ -43,7 +43,9 @@ sudo apt install zsh
  ```sh
  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
  ```
- Copy the tmux.conf and do `Prefix`+I.
+ Copy the tmux.conf and do `tmux source ~/.tmux.conf`.
+ 
+ Install plugin by doing `Prefix`+I.
  
  - Install vim-plugin manager for installing neovim plugins. [neovim install](https://www.linode.com/docs/guides/how-to-install-neovim-and-plugins-with-vim-plug/)
 
