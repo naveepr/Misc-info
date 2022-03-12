@@ -37,6 +37,9 @@ sudo apt install zsh
  ```sh
  git clone https://github.com/zdharma/fast-syntax-highlighting.git \
   ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting
+  
+ git clone https://github.com/zsh-users/zsh-autosuggestions \
+  ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
  ```
  
  - Install tmux plugin manager [tmux plugin manager](https://github.com/tmux-plugins/tpm)
