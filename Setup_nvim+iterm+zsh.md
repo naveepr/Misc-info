@@ -65,7 +65,12 @@ sudo apt install zsh
  ```sh
  sudo apt install yarn
  sudo apt install npm
- sudo apt install node
+ ```
+ - Install newer version of node mostly v12.x and above to support the LSP language server installation.
+ ```
+ # Using Ubuntu
+curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
+sudo apt-get install -y nodejs
  ```
  
  
