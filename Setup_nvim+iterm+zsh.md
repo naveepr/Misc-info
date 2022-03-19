@@ -64,7 +64,8 @@ sudo apt install zsh
  
  - Run plugInstall inside init.vim to install the plugins. The dependencies or errors needed to be resolved by installing them.
  ```sh
- sudo apt install yarn
+ Install ripgrep and fd for Telescope --> sudo apt-get install ripgrep
+ sudo apt install fd-find
  sudo apt install npm
  ```
  - Install newer version of node mostly v12.x and above to support the LSP language server installation.
