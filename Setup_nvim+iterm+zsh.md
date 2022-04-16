@@ -34,6 +34,7 @@ sudo apt install zsh
  ```
  - Install a powerline font in iterm2 [powerline fonts](https://medium.com/@Clovis_app/configuration-of-a-beautiful-efficient-terminal-and-prompt-on-osx-in-7-minutes-827c29391961)
  
+ - Install nerdfont for nvim-tree icons 
  - Install the plugins needed in zshrc using oh_my_zsh
  ```sh
  git clone https://github.com/zdharma/fast-syntax-highlighting.git \
