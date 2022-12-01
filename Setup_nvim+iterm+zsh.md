@@ -48,7 +48,7 @@ sudo apt install zsh
  ```sh
  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
  ```
- Copy the tmux.conf and do `tmux source ~/.tmux.conf`.
+ Copy the [tmux.conf](https://github.com/naveepr/dotfiles/blob/main/.tmux.conf) and do `tmux source ~/.tmux.conf`.
  
  Install plugin by doing `Prefix`+I.
  
