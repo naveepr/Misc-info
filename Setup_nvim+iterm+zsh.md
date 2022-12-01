@@ -37,7 +37,7 @@ sudo apt install zsh
  - Install nerdfont for nvim-tree icons 
  - Install the plugins needed in zshrc using oh_my_zsh
  ```sh
- git clone https://github.com/zdharma/fast-syntax-highlighting.git \
+ git clone https://github.com/zdharma-continuum/fast-syntax-highlighting \
   ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting
   
  git clone https://github.com/zsh-users/zsh-autosuggestions \
