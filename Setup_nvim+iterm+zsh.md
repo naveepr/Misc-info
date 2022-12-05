@@ -42,6 +42,9 @@ sudo apt install zsh
   
  git clone https://github.com/zsh-users/zsh-autosuggestions \
   ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+  
+ git clone https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ssh-agent \
+  ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/ssh-agent
  ```
  
  - Install tmux plugin manager [tmux plugin manager](https://github.com/tmux-plugins/tpm)
