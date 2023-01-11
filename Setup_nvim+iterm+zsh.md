@@ -8,6 +8,23 @@ sudo apt-get update
 sudo apt-get install neovim
 sudo apt-get install python-dev python-pip python3-dev python3-pip
 ```
+
+For installing it from source follow below:
+```sh
+sudo apt install cmake
+sudo apt install gcc
+cmake --version
+gcc --version
+sudo apt-get install ninja-build gettext libtool libtool-bin autoconf automake cmake g++ pkg-config unzip curl doxygen
+git clone https://github.com/neovim/neovim
+cd neovim
+git checkout stable
+make CMAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX=$HOME/neovim"
+ln -sf luajit-2.1.0-beta3 /home/parallels/neovim/.deps/usr/bin/luajit
+make CMAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX=$HOME/neovim"
+make install
+export PATH="$HOME/neovim/bin:$PATH" to .zshrc
+```
 - Install zsh
 ```sh
 sudo apt install zsh
