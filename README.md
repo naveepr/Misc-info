@@ -8,4 +8,4 @@ Repository for misc commands and information
 
 [https://guides.github.com/features/mastering-markdown/](https://guides.github.com/features/mastering-markdown/)
 
-[https://github.com/robbyrussell/oh-my-zsh] (https://github.com/robbyrussell/oh-my-zsh)
+[https://github.com/robbyrussell/oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
