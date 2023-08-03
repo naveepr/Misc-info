@@ -187,6 +187,7 @@ git rebase [<upstream>] [<branch>]
   git rebase --onto master server client --> take changes on client not on server and rebase to master
  git rebase --onto new-parent old-parent
 git rebase --onto master branch_one branch_two
+git rebase --onto <new-parent> <old-parent> <branch>
 
  ```
  
