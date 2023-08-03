@@ -182,8 +182,12 @@ git config --global branch.autosetuprebase always
  
  - *git rebase* : 
  ```sh
+git rebase [<upstream>] [<branch>]  
  git rebase [branch] --> apply any commits of current branch ahead of specified one. It provides a linear commit history compared to the git pull and merge strategy.
   git rebase --onto master server client --> take changes on client not on server and rebase to master
+ git rebase --onto new-parent old-parent
+git rebase --onto master branch_one branch_two
+
  ```
  
  - *git bisect* :
